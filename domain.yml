@@ -1,0 +1,51 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- offers:
+    use_entities: true
+entities: []
+slots: {}
+responses:
+  utter_greet:
+  - text: Hello guest! Welcome to rentacs Tours, where your confort, personal safety and total satisfaction is the highest priority. I'm yourRentacs  assistant and i will help you make your vacation to be perfect
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_planification:
+  - buttons:
+    - payload: offers
+      title: Activities offered
+    - payload: contact
+      title: contact us
+    text: Ready to make your vacation trip planing easy, make it worry free and samless?! click Activities offered or contact us
+  utter_offers:
+  - text: https://www.test.ahlbusinessgroup.com/best-offers
+actions: []
+forms: {}
+e2e_actions: []
